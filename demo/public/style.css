@@ -1,0 +1,10 @@
+.status {
+  position: fixed;
+  top: 0;
+  background-color: #69c84f;
+  padding: 1em 3em;
+}
+
+.name {
+  margin: 5em;
+}
