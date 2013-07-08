@@ -15,6 +15,8 @@ open http://localhost:4567
 open http://localhost:4567/complete
 ```
 
+Work in the [views/index.haml](exercise/views/index.haml) and [public/app.js](exercise/public/app.js) files.
+
 ## Resources
 
 See the list in [my Advanced JS syllabus](http://documentup.com/afeld/advanced_js#resources).
