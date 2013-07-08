@@ -1,23 +1,13 @@
 $(document).ready(function(){
-  // hide the box initially
-  $('.status').hide();
-
-  // hide the status while editing
-  $('.name').focus(function(){
-    $('.status').hide();
-  });
-
-  $('.name').blur(function(){
+  var saveDoc = function(doc){
     $('.status')
       .text('Saving...')
       .show();
 
     $.ajax({
-      url: 'profile',
+      url: 'doc',
       type: 'put',
-      data: {
-        name: $(this).text()
-      },
+      data: doc,
       success: function(){
         // display the status 
         $('.status').text('Saved!');
@@ -29,5 +19,29 @@ $(document).ready(function(){
         $('.status').text('Error!');
       }
     });
+  };
+
+
+  // hide the status while editing
+  $('.doc .editable').focus(function(){
+    $('.status').hide();
   });
+
+  $('.doc .title').blur(function(){
+    var doc = {
+      title: $(this).text()
+    };
+    saveDoc(doc);
+  });
+
+  $('.doc .body').blur(function(){
+    var doc = {
+      body: $(this).text()
+    };
+    saveDoc(doc);
+  });
+
+
+  // hide the box initially
+  $('.status').hide();
 });

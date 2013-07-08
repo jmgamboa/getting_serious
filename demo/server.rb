@@ -3,19 +3,20 @@ require 'multi_json'
 require 'sinatra/json'
 
 fake_db = {
-  'name' => 'Aidan Feldman'
+  'title' => 'The Title',
+  'body' => 'The body.'
 }
 
 get '/' do
-  @profile = fake_db
+  @doc = fake_db
   haml :index
 end
 
-get '/profile' do
+get '/doc' do
   json fake_db
 end
 
-put '/profile' do
+put '/doc' do
   sleep 1
   fake_db.merge!(params)
   json fake_db

@@ -8,5 +8,8 @@
     %script{ src: 'app.js' }
   %body
     .status
-    %h1.name{ contenteditable: true }
-      = @profile['name']
+    .doc
+      %h1.title.editable{ contenteditable: true }
+        = @doc['title']
+      %p.body.editable{ contenteditable: true }
+        = @doc['body']
