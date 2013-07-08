@@ -27,9 +27,16 @@ $(document).ready(function(){
     $('.status').hide();
   });
 
+  // update the title in real-time
+  $('.doc .title').on('input', function(){
+    var title = $(this).text();
+    $('title').text(title);
+  });
+
   $('.doc .title').blur(function(){
+    var title = $(this).text();
     var doc = {
-      title: $(this).text()
+      title: title
     };
     saveDoc(doc);
   });
