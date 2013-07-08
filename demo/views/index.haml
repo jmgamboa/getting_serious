@@ -1,0 +1,11 @@
+!!! 5
+%html
+  %head
+    %title
+      Demo
+    %link{ href: 'style.css', rel: 'stylesheet' }
+    %script{ src: 'http://code.jquery.com/jquery-2.0.3.js' }
+    %script{ src: 'app.js' }
+  %body
+    %h1.name{ contenteditable: true }
+      = @profile['name']
