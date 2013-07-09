@@ -20,6 +20,7 @@ end
 
 
 get '/doc' do
+  sleep 1
   json fake_db
 end
 
